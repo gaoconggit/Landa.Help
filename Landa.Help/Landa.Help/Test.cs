@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Toolkit;
 
 namespace Landa.Help
 {
@@ -10,7 +6,7 @@ namespace Landa.Help
     {
         public string Print()
         {
-            return "hello,here is Landa !";
+            return "hello,here is Landa !".IsAllInt().ToString();
         }
     }
 }

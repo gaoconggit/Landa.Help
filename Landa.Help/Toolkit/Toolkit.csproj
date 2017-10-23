@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7424DC83-8224-41BE-9966-F5FD5AF2C56C}</ProjectGuid>
+    <ProjectGuid>{B34F6C82-B69B-4F42-A739-9927F191869D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Landa.Help</RootNamespace>
-    <AssemblyName>Landa.Help</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Toolkit</RootNamespace>
+    <AssemblyName>Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,11 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,14 +44,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Convert\TypeParse.cs" />
+    <Compile Include="Data\DataTable\DataTableExtensions.cs" />
+    <Compile Include="Data\DateTime\DateTimeExtensions.cs" />
+    <Compile Include="Data\Dictionary\DictionaryExtensions.cs" />
+    <Compile Include="Data\Dynamic\DynamicExtensions.cs" />
+    <Compile Include="Data\EnumType\EnumExtensions.cs" />
+    <Compile Include="Data\HtmlType\XHtmlElement.cs" />
+    <Compile Include="Data\IEnumerable\IEnumerable.cs" />
+    <Compile Include="Data\IQueryable\IQueryableExtensions.cs" />
+    <Compile Include="Data\String\StringExtensions.cs" />
+    <Compile Include="Form\RequestToModel.cs" />
+    <Compile Include="Form\UploadFile.cs" />
+    <Compile Include="Form\UploadImage.cs" />
+    <Compile Include="Form\ValidationSugar.cs" />
+    <Compile Include="Http\RequestInfo.cs" />
+    <Compile Include="Http\ResponseSugar.cs" />
+    <Compile Include="Http\StorageObject\CacheManager.cs" />
+    <Compile Include="Http\StorageObject\CookiesManager.cs" />
+    <Compile Include="Http\StorageObject\IHttpStorageObject.cs" />
+    <Compile Include="Http\StorageObject\SessionHelper.cs" />
+    <Compile Include="Http\WebRequestSugar.cs" />
+    <Compile Include="IO\ClassGenerating.cs" />
+    <Compile Include="IO\ConfigExtenions.cs" />
+    <Compile Include="IO\FileExtenions.cs" />
+    <Compile Include="IO\ReflectionExtenions.cs" />
+    <Compile Include="OthersExtenions\IsWhat.cs" />
+    <Compile Include="OthersExtenions\LogicExtenions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Toolkit\Toolkit.csproj">
-      <Project>{b34f6c82-b69b-4f42-a739-9927f191869d}</Project>
-      <Name>Toolkit</Name>
-    </ProjectReference>
+    <Compile Include="Security\EncryptExtenions.cs" />
+    <Compile Include="Security\RandomExtenions.cs" />
+    <Compile Include="Security\VerifyCodeExtenions.cs" />
+    <Compile Include="UI\PageString.cs" />
+    <Compile Include="Work\MailSmtp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

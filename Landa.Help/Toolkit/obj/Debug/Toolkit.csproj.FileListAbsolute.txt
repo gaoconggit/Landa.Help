@@ -1,0 +1,5 @@
+C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\obj\Debug\Toolkit.csprojResolveAssemblyReference.cache
+C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\bin\Debug\Toolkit.dll
+C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\bin\Debug\Toolkit.pdb
+C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\obj\Debug\Toolkit.dll
+C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\obj\Debug\Toolkit.pdb
