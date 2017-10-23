@@ -3,3 +3,9 @@ C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\bin\Debug\Toolkit.dll
 C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\bin\Debug\Toolkit.pdb
 C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\obj\Debug\Toolkit.dll
 C:\Users\jacak.yang\Desktop\新建文件夹\Test\Toolkit\obj\Debug\Toolkit.pdb
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Toolkit\bin\Debug\Toolkit.dll
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Toolkit\bin\Debug\Toolkit.pdb
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Toolkit\obj\Debug\Toolkit.csprojResolveAssemblyReference.cache
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Toolkit\obj\Debug\Toolkit.csproj.CoreCompileInputs.cache
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Toolkit\obj\Debug\Toolkit.dll
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Toolkit\obj\Debug\Toolkit.pdb
