@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://www.landasoft.com/</projectUrl>
+    <iconUrl>http://www.landasoft.com/Templets/landa/img/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>666</description>
+    <releaseNotes>2017年10月23日 16:24:21更新</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>我是来测试的</tags>
+  </metadata>
+</package>

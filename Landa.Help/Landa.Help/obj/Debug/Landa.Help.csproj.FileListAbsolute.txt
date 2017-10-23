@@ -1,0 +1,4 @@
+d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\bin\Debug\Landa.Help.dll
+d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\bin\Debug\Landa.Help.pdb
+d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\obj\Debug\Landa.Help.dll
+d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\obj\Debug\Landa.Help.pdb
