@@ -2,3 +2,15 @@ d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\bin
 d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\bin\Debug\Landa.Help.pdb
 d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\obj\Debug\Landa.Help.dll
 d:\users\kim.gao\documents\visual studio 2015\Projects\Landa.Help\Landa.Help\obj\Debug\Landa.Help.pdb
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\bin\Debug\Landa.Help.dll
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\bin\Debug\Landa.Help.pdb
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.csprojResolveAssemblyReference.cache
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.dll
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.pdb
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\bin\Debug\zh-Hans\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\jacak.yang\Desktop\Landa.Help\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.csprojFakesResolveAssemblyReference.cache
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.csprojResolveAssemblyReference.cache
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.csproj.CoreCompileInputs.cache
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.dll
+C:\Users\h4xh7j2\Desktop\拓展类\Landa.Help\Landa.Help\Landa.Help\obj\Debug\Landa.Help.pdb

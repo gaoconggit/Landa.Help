@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Landa.Help", "Landa.Help\Landa.Help.csproj", "{7424DC83-8224-41BE-9966-F5FD5AF2C56C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit", "Toolkit\Toolkit.csproj", "{B34F6C82-B69B-4F42-A739-9927F191869D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TangDR", "TangDR\TangDR.csproj", "{6213C46F-6E83-4CD5-BF78-6799DD579ADE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{7424DC83-8224-41BE-9966-F5FD5AF2C56C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7424DC83-8224-41BE-9966-F5FD5AF2C56C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7424DC83-8224-41BE-9966-F5FD5AF2C56C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B34F6C82-B69B-4F42-A739-9927F191869D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34F6C82-B69B-4F42-A739-9927F191869D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34F6C82-B69B-4F42-A739-9927F191869D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34F6C82-B69B-4F42-A739-9927F191869D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6213C46F-6E83-4CD5-BF78-6799DD579ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6213C46F-6E83-4CD5-BF78-6799DD579ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6213C46F-6E83-4CD5-BF78-6799DD579ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6213C46F-6E83-4CD5-BF78-6799DD579ADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E0AF407-C589-45A0-982B-1A9AE13CCC59}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B34F6C82-B69B-4F42-A739-9927F191869D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Toolkit</RootNamespace>
+    <AssemblyName>Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Convert\TypeParse.cs" />
+    <Compile Include="Data\DataTable\DataTableExtensions.cs" />
+    <Compile Include="Data\DateTime\DateTimeExtensions.cs" />
+    <Compile Include="Data\Dictionary\DictionaryExtensions.cs" />
+    <Compile Include="Data\Dynamic\DynamicExtensions.cs" />
+    <Compile Include="Data\EnumType\EnumExtensions.cs" />
+    <Compile Include="Data\HtmlType\XHtmlElement.cs" />
+    <Compile Include="Data\IEnumerable\IEnumerable.cs" />
+    <Compile Include="Data\IQueryable\IQueryableExtensions.cs" />
+    <Compile Include="Data\String\StringExtensions.cs" />
+    <Compile Include="Form\RequestToModel.cs" />
+    <Compile Include="Form\UploadFile.cs" />
+    <Compile Include="Form\UploadImage.cs" />
+    <Compile Include="Form\ValidationSugar.cs" />
+    <Compile Include="Http\RequestInfo.cs" />
+    <Compile Include="Http\ResponseSugar.cs" />
+    <Compile Include="Http\StorageObject\CacheManager.cs" />
+    <Compile Include="Http\StorageObject\CookiesManager.cs" />
+    <Compile Include="Http\StorageObject\IHttpStorageObject.cs" />
+    <Compile Include="Http\StorageObject\SessionHelper.cs" />
+    <Compile Include="Http\WebRequestSugar.cs" />
+    <Compile Include="IO\ClassGenerating.cs" />
+    <Compile Include="IO\ConfigExtenions.cs" />
+    <Compile Include="IO\FileExtenions.cs" />
+    <Compile Include="IO\ReflectionExtenions.cs" />
+    <Compile Include="OthersExtenions\IsWhat.cs" />
+    <Compile Include="OthersExtenions\LogicExtenions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\EncryptExtenions.cs" />
+    <Compile Include="Security\RandomExtenions.cs" />
+    <Compile Include="Security\VerifyCodeExtenions.cs" />
+    <Compile Include="UI\PageString.cs" />
+    <Compile Include="Work\MailSmtp.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
