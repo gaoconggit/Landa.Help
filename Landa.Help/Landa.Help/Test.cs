@@ -6,7 +6,7 @@ namespace Landa.Help
     {
         public string Print()
         {
-            return "hello,here is Landa !".IsAllInt().ToString();
+            return "hello,here is Landa !".IsDate().ToString();
 
            
         }
