@@ -7,8 +7,6 @@ namespace Landa.Help
         public string Print()
         {
             return "hello,here is Landa !".IsDate().ToString();
-
-           
         }
     }
 }
