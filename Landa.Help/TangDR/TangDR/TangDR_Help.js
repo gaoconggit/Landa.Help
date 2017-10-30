@@ -12,7 +12,7 @@
 
 (function(){
     $.extend({
-        getMax: function (obj) {
+        getMax: function(obj) {
             /// <summary>
             /// 得到数组最大数 
             /// </summary>
@@ -42,7 +42,7 @@
 			})
 			return min;
         },
-        arraySoft: function (obj, rule) {
+        arraySoft: function(obj, rule) {
             /// <summary>
             /// 数组排序
             /// </summary>
@@ -70,7 +70,36 @@
             })
             return obj;
         },
-        getParamater: function (name) {
+        objectSoft: function(obj, value, rule) {
+            /// <summary>
+            /// 对象数组排序
+            /// </summary>
+            /// <param name="obj" type="array">对象数组</param>
+            /// <param name="value" type="string">排序属性</param>
+            /// <param name="rule" type="string">max：从大到小，min：从小到大</param>
+            /// <returns type=""></returns>
+            var temp;
+            $(obj).each(function (i) {
+                $(obj).each(function (j) {
+                    if (rule == "max") {
+                        if (obj[i][value] > obj[j][value]) {
+                            temp = obj[i];
+                            obj[i] = obj[j];
+                            obj[j] = temp;
+                        }
+                    }
+                    else if (rule == "min") {
+                        if (obj[i][value] < obj[j][value]) {
+                            temp = obj[i];
+                            obj[i] = obj[j];
+                            obj[j] = temp;
+                        }
+                    }
+                })
+            })
+            return obj;
+        },
+        getParamater: function(name) {
             /// <summary>
             /// 获取url中参数
             /// </summary>
@@ -79,7 +108,40 @@
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]); return null;
+        },
+         formDataLoad: function (domId, obj) {
+            for (var property in obj) {
+                if (obj.hasOwnProperty(property) == true) {
+                    if ($("#" + domId + " [name='" + property + "']").size() > 0) {
+                        $("#" + domId + " [name='" + property + "']").each(function () {
+                            var dom = this;
+                            if ($(dom).attr("type") == "radio") {
+                                $(dom).filter("[value='" + obj[property] + "']").attr("checked", true);
+                            }
+                            if ($(dom).attr("type") == "checkbox") {
+                                obj[property] == true ? $(dom).attr("checked", "checked") : $(dom).attr("checked", "checked").removeAttr("checked");
+                            }
+                            if ($(dom).attr("type") == "text" || $(dom).prop("tagName") == "SELECT" || $(dom).attr("type") == "hidden" || $(dom).attr("type") == "textarea") {
+                                $(dom).val(obj[property]);
+                            }
+                            if ($(dom).prop("tagName") == "TEXTAREA") {
+                                $(dom).val(obj[property]);
+                            }
+                        });
+                    }
+                }
+            }
         }
-	})
+    })
+    $.fn.extend({
+        resetForm: function () {
+            /// <summary>
+            /// 清空表单
+            /// </summary>
+            return this.each(function(){
+                this.reset();
+            });
+        }
+    })
 }($))
 
