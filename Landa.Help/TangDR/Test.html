@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+</head>
+<body>
+    <form id="form1">
+        <p>First name: <input type="checkbox" name="name1" value=""/></p>
+        <p>Last name: <input type="checkbox" name="password" /></p>
+       
+    </form>
+    <input type="button" id="btn"/>
+</body>
+   
+</html>
+<script src="TangDR/jquery-3.2.1.min.js"></script>
+<script src="TangDR/TangDR_Help.js"></script>
+<script>
+
+    function populate(frm, data) {
+        $.each(data, function (key, value) {
+            debugger
+            var ctrl = $('[name=' + key + ']', frm);
+            switch (ctrl.prop("type")) {
+                case "radio": case "checkbox":
+                    ctrl.each(function () {
+                        if ($(this).attr('value') == value) $(this).attr("checked", value);
+                    });
+                    break;
+                default:
+                    ctrl.val(value);
+            }
+        });
+    }
+    $("#btn").click(function () {
+        $.getJSON('demo.js', function (data) {
+            $.formDataLoad($("#form1"), data);
+        })
+    })
+
+</script>
