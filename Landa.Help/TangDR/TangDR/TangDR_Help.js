@@ -12,35 +12,21 @@
 
 (function(){
     $.extend({
-        getMax: function(obj) {
+        getMax: function (arr) {
             /// <summary>
             /// 得到数组最大数 
             /// </summary>
             /// <param name="obj" type="array">数组</param>
             /// <returns type="array">数组</returns>
-			var max = obj[0];
-			$(obj).each(function(i){
-				if( max < obj[i])
-				{
-					max = obj[i];
-				}		
-			})
-			return max;
+            return Math.max.apply(null, arr);
 		},
-        getMin: function(obj) {
+        getMin: function (arr) {
             /// <summary>
             /// 得到数组最小数
             /// </summary>
             /// <param name="obj" type="array">数组</param>
             /// <returns type="int">最小数</returns>
-			var min = obj[0];
-			$(obj).each(function(i){
-				if( min > obj[i])
-				{
-					min = obj[i];
-				}		
-			})
-			return min;
+            return Math.min.apply(null, arr);
         },
         arraySoft: function(obj, rule) {
             /// <summary>
@@ -49,26 +35,12 @@
             /// <param name="obj" type="array">数组</param>
             /// <param name="rule" type="string">max从大到小，min从小到大</param>
             /// <returns type="array">得到排序的数组</returns>
-            var temp;
-            $(obj).each(function (i) {
-                $(obj).each(function (j) {
-                    if (rule == "max") {
-                        if (obj[i] > obj[j]) {
-                            temp = obj[i];
-                            obj[i] = obj[j];
-                            obj[j] = temp;
-                        }
-                    }
-                    else if(rule == "min") {
-                        if (obj[i] < obj[j]) {
-                            temp = obj[i];
-                            obj[i] = obj[j];
-                            obj[j] = temp;
-                        }
-                    }
-                })
-            })
-            return obj;
+            if (rule == "max") {
+                obj.sort(function (a, b) { return b - a });
+            }
+            if (rule == "min") {
+                obj.sort(function (a, b) { return a - b });
+            }
         },
         objectSoft: function(obj, value, rule) {
             /// <summary>
@@ -78,26 +50,12 @@
             /// <param name="value" type="string">排序属性</param>
             /// <param name="rule" type="string">max：从大到小，min：从小到大</param>
             /// <returns type=""></returns>
-            var temp;
-            $(obj).each(function (i) {
-                $(obj).each(function (j) {
-                    if (rule == "max") {
-                        if (obj[i][value] > obj[j][value]) {
-                            temp = obj[i];
-                            obj[i] = obj[j];
-                            obj[j] = temp;
-                        }
-                    }
-                    else if (rule == "min") {
-                        if (obj[i][value] < obj[j][value]) {
-                            temp = obj[i];
-                            obj[i] = obj[j];
-                            obj[j] = temp;
-                        }
-                    }
-                })
-            })
-            return obj;
+            if (rule == "max") {
+                obj.sort(function (a, b) { return b.value - a.value });
+            }
+            if (rule == "min") {
+                obj.sort(function (a, b) { return a.value - b.value });
+            }
         },
         getParamater: function(name) {
             /// <summary>
@@ -109,10 +67,15 @@
             var r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]); return null;
         },
-         formDataLoad: function (domId, obj) {
+        formDataLoad: function (domId, obj) {
+            /// <summary>
+            /// json自动填充From表格
+            /// </summary>
+            /// <param name="domId" type="type">填充From的ID号</param>
+            /// <param name="obj" type="type">填充json数据 json格式："name": "内容"</param>
             for (var property in obj) {
                 if (obj.hasOwnProperty(property) == true) {
-                    if ($("#" + domId + " [name='" + property + "']").size() > 0) {
+                    if ($("#" + domId + " [name='" + property + "']").length > 0) {
                         $("#" + domId + " [name='" + property + "']").each(function () {
                             var dom = this;
                             if ($(dom).attr("type") == "radio") {
@@ -125,6 +88,9 @@
                                 $(dom).val(obj[property]);
                             }
                             if ($(dom).prop("tagName") == "TEXTAREA") {
+                                $(dom).val(obj[property]);
+                            }
+                            if ($(dom).prop("type") == "password") {
                                 $(dom).val(obj[property]);
                             }
                         });
