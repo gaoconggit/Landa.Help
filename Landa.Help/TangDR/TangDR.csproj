@@ -66,8 +66,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\icon1.png" />
+    <Content Include="images\icon2.png" />
+    <Content Include="mutipleSelect.html" />
     <Content Include="packages.config" />
     <Content Include="demo.json" />
+    <Content Include="TangDr\ajax.js" />
+    <Content Include="TangDr\jquery-3.2.1.js" />
+    <Content Include="test.json" />
+    <Content Include="demo.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -76,17 +83,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\jquery-1.7-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.7.js" />
-    <Content Include="Scripts\jquery-1.7.min.js" />
-    <Content Include="TangDr\jquery-3.2.1.min.js" />
+    <Content Include="TangDr\mutipleSelect.js" />
     <Content Include="TangDr\TangDR_Help.js" />
     <Content Include="TangDr\TangDr_Js.js" />
-    <Content Include="TangDr\帮助文档.txt" />
+    <Content Include="TangDr\help.txt" />
     <Content Include="Test.html" />
-    <Content Include="Web.config" />
+    <Content Include="uploadFile.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="demo.ashx.cs">
+      <DependentUpon>demo.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
