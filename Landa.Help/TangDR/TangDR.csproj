@@ -69,6 +69,11 @@
     <Content Include="EasyUI\jquery.easyui.min.js" />
     <Content Include="images\icon1.png" />
     <Content Include="images\icon2.png" />
+    <Content Include="LandaUI\css\style.css" />
+    <Content Include="LandaUI\javascript\jquery-3.2.1.js" />
+    <Content Include="LandaUI\javascript\TangDR_Help.js" />
+    <Content Include="LandaUI\javascript\TangDr_Js.js" />
+    <Content Include="LandaUI\LandUI.js" />
     <Content Include="mutipleSelect.html" />
     <Content Include="packages.config" />
     <Content Include="demo.json" />
@@ -88,8 +93,6 @@
     <Content Include="TangDr\mutipleSelect.js" />
     <Content Include="TangDr\TangDR_Help.js" />
     <Content Include="TangDr\TangDr_Js.js" />
-    <Content Include="TangDr\help.txt" />
-    <Content Include="Test.html" />
     <Content Include="uploadFile.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
