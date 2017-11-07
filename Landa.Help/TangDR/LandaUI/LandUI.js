@@ -77,8 +77,8 @@
                     }, function () {
                         $(this).css("background", "none");
                     })
-                },function () {
-                    $("#mutipleSelect .body").hide();
+                }, function () {
+                    $(this).find(".body").hide();
                 })
             }
             listbox.checkAll = function () {
@@ -94,7 +94,7 @@
                         dom.find("ul li [type=checkbox]").each(function () {
                             var name = $(this).prop("name");
                             var text = $(this).parent()["0"].innerText;
-                            var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='$().ListBox().listbox.delTag(event,this)'  src='images/icon1.png'/></span>";
+                            var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='$().ListBox().listbox.delTag(event,this)'  src='https://raw.githubusercontent.com/gaoconggit/Landa.Help/LandaUI/Landa.Help/TangDR/images/icon1.png'/></span>";
                             dom.find(".top").append(" " + labelElement);
                         })
                     }
@@ -123,7 +123,7 @@
                     var text = $(this).parent()["0"].innerText;
                     //添加选中项
                     if (status) {
-                        var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='$().ListBox().listbox.delTag(event,this)' src='images/icon1.png'/></span>";
+                        var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='$().ListBox().listbox.delTag(event,this)' src='https://raw.githubusercontent.com/gaoconggit/Landa.Help/LandaUI/Landa.Help/TangDR/images/icon1.png'/></span>";
                         dom.find(".top").append(" " + labelElement);
                     }
                         //取消选中项
