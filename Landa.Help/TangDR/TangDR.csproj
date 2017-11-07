@@ -77,9 +77,6 @@
     <Content Include="mutipleSelect.html" />
     <Content Include="packages.config" />
     <Content Include="demo.json" />
-    <Content Include="TangDr\jquery-3.2.1.js" />
-    <Content Include="TangDr\style.css" />
-    <Content Include="TangDr\LandUI.js" />
     <Content Include="test.json" />
     <Content Include="demo.ashx" />
     <None Include="Web.Debug.config">
@@ -90,9 +87,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TangDr\mutipleSelect.js" />
-    <Content Include="TangDr\TangDR_Help.js" />
-    <Content Include="TangDr\TangDr_Js.js" />
     <Content Include="uploadFile.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
