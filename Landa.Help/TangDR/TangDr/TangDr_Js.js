@@ -1,6 +1,11 @@
 ﻿/**
-*@class JavaScript原生拓展
+* *@class JavaScript原生
 *
+* 
+* 
+* 
+* 
+* 
 * 
 * 
 * 
@@ -78,7 +83,6 @@
                 for (var i = 0; i < arguments.length; i++) {
                     if (arguments[i] != undefined) {
                         //var reg = new RegExp("({[" + i + "]})", "g");//这个在索引大于9时会有问题，谢谢何以笙箫的指出
-
                         var reg = new RegExp("({)" + i + "(})", "g");
                         result = result.replace(reg, arguments[i]);
                     }
@@ -86,7 +90,7 @@
             }
         }
         return result;
-    }
+    };
 
     Object.prototype.isEmpty = function () {
         var obj = this;

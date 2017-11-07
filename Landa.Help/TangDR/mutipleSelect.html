@@ -1,83 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-	<meta charset="utf-8" />
-    <style>
-        .*{
-            margin:0;
-            padding:0;
-        }
-        #mutipleSelect {
-            width:250px;
-            height:auto;
-        }
-        #mutipleSelect .top {
-            min-width:248px;
-            min-height:30px;
-            border:1px solid #ccc;
-            display: inline-block;
-        }
-        #mutipleSelect .top span{
-            background:#e1ecf5;
-            color:#39739d;
-            padding:4px;
-            font-size:11px;
-            display:block;
-            margin:0px 4px 4px 0px;
-            float:left;
-        }
-        #mutipleSelect .body {
-            height:auto;
-            display:none;
-            border:1px solid #ccc;
-            border-top:none;
-            clear:both;
-            margin-top: -4px;
-        }
-
-        #mutipleSelect .body ul{
-            margin:0;
-            list-style:none;
-            padding-left:0px;
-        }
-        #mutipleSelect .body li{
-            padding:10px 0 10px 10px;
-        }
-
-        .delImage {
-            margin-top:0px
-        }
-    </style>
+    <meta charset="utf-8" />
     <link href="TangDr/style.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="mutipleSelect">
-        <div class="top" ></div>
-        <div class="body">
-           <input name="checkAll"  type="checkbox" />全选
-            <ul>
-                <li><input name="a1" value="1" type="checkbox"/>唐大人新华书店</li>
-                <li><input name="a2" value="2" type="checkbox" />唐大人酒店</li>
-                <li><input name="a3" value="3" type="checkbox" />唐大人旅馆</li>
-                <li><input name="a4" value="4" type="checkbox" />唐大人阿里巴巴</li>
-                <li><input name="a5" value="5" type="checkbox" />唐大人教育</li>
-            </ul>
-        </div>
-    </div>
-   <input id="demo" value="Click here" type="button"/>
-    <div id="demo1"></div>
-    <div id="demo2"></div>
+    <div id="demo"></div>
 </body>
 </html>
 <script src="TangDr/jquery-3.2.1.js"></script>
 <script src="TangDR/TangDR_Help.js"></script>
-<script src="TangDr/mutipleSelect.js"></script>
-<script src="TangDr/ajax.js"></script>
+<script src="TangDr/LandUI.js"></script>
+
+
 <script>
-    $("#demo").click(function () {
-        alert(getItem.value());
-    })
-    $("#demo2").TrListBox("getIems");
+    $("#demo").ListBox({url: "test.json"});
 </script>

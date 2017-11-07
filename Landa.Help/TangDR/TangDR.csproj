@@ -66,13 +66,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EasyUI\jquery.easyui.min.js" />
     <Content Include="images\icon1.png" />
     <Content Include="images\icon2.png" />
     <Content Include="mutipleSelect.html" />
     <Content Include="packages.config" />
     <Content Include="demo.json" />
-    <Content Include="TangDr\ajax.js" />
     <Content Include="TangDr\jquery-3.2.1.js" />
+    <Content Include="TangDr\style.css" />
+    <Content Include="TangDr\LandUI.js" />
     <Content Include="test.json" />
     <Content Include="demo.ashx" />
     <None Include="Web.Debug.config">

@@ -4,7 +4,7 @@
         TrListBox: function (config) {
             var dom = $(this);
             var Tr = (function () {
-                temple = function () {
+                function temple() {
                     //生成html模板
                     $(dom).append("<div class='top' ></div>"
                                     + "<div class='body'>"
@@ -16,19 +16,19 @@
                                     + "<li><input name='a4' value='4' type='checkbox' />唐大人阿里巴巴</li>"
                                     + " <li><input name='a5' value='5' type='checkbox' />唐大人教育</li>"
                                     + "</ul>"
-                                    + "</div>");
-                    //绑定css样式
-                    $(dom).addClass("TangDRlistBox");
+                                    + "</div>");       
                     //绑定数据
                     Tr.bundDate("test.json");
+                    //绑定css样式
+                    $(dom).addClass("TangDRlistBox");
                     //输入框点击事件绑定
                     Tr.clickTop();
                     //鼠标划过绑定
                     Tr.hoverBody();
                     //选中全部事件绑定
                     Tr.checkAll();
-                },
-                bundDate = function (url) {
+                };
+                function bundDate(url) {
                     //绑定json数据
                     $.getJSON(url, function (data) {
                         var additems = "";
@@ -42,7 +42,7 @@
                             var text = $(this).parent()["0"].innerText;
                             //添加选中项
                             if (status) {
-                                var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='common.delTag(event,this)' src='images/icon1.png'/></span>";
+                                var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='$().TrListBox().Tr.delTag(event,this)' src='images/icon1.png'/></span>";
                                 $(dom).find(".top").append(" " + labelElement);
                             }
                                 //取消选中项
@@ -53,14 +53,13 @@
                             Tr.checkAllHelp();
                         })
                     })
-
-                },
-                clickTop = function () {
+                };
+                function clickTop() {
                     $(dom).find(".top").click(function () {
                         $(dom).find(".body").toggle();
                     })
-                },
-                hoverBody = function () {
+                };
+                function hoverBody() {
                     $(dom).hover(function () {
                         $(dom).find(".body ul li").hover(function () {
                             $(this).css("background", "#ccc");
@@ -71,8 +70,8 @@
                     function () {
                         //$("#mutipleSelect .body").hide();
                     })
-                },
-                checkAll = function () {
+                };
+                function checkAll() {
                     $(dom).find("[name=checkAll]").change(function () {
                         var status = $(dom).find("[name=checkAll]").prop("checked");
                         if (status) {
@@ -84,7 +83,7 @@
                             $(dom).find("ul li [type=checkbox]").each(function () {
                                 var name = $(this).prop("name");
                                 var text = $(this).parent()["0"].innerText;
-                                var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='common.delTag(event,this)' src='images/icon1.png'/></span>";
+                                var labelElement = "<span name='" + name + "'>" + text + "<img class='delImage' onclick='$().TrListBox().Tr.delTag(event,this)'  src='images/icon1.png'/></span>";
                                 $(dom).find(".top").append(" " + labelElement);
                             })
                         }
@@ -94,9 +93,9 @@
                             $(dom).find(".top").text("");
                         }
                     })
-                },
-                checkAllHelp = function () {
-                    var getItem=method.getItems();
+                };
+                function checkAllHelp() {
+                    var getItem = method.getItems();
                     if (getItem.length_checked == getItem.length) {
                         $(dom).find("[name=checkAll]").prop("checked", true);
                     }
@@ -104,13 +103,30 @@
                         $(dom).find("[name=checkAll]").prop("checked", false);
                     }
                 };
+                function delTag(e, obj) {
+                    var dom=$(obj).parent().parent().parent();
+                    var name = $(obj).parent().attr("name")
+                    e.stopPropagation();
+                    $(dom).find(".top [name=" + name + "]").remove();
+                    $(dom).find(".body ul li [name=" + name + "]").prop("checked", false)
+                    if ($(dom).find(".top").text() == "") {
+                        $(dom).find(".body [name=checkAll]").prop("checked", false);
+                    }
+                    if (getItem.checked() == getItem.lenght()) {
+                        $(dom).find("[name=checkAll]").prop("checked", true);
+                    }
+                    else {
+                        $(dom).find("[name=checkAll]").prop("checked", false);
+                    }
+                }
                 return {
                     temple: temple,
                     bundDate: bundDate,
                     clickTop: clickTop,
                     hoverBody: hoverBody,
                     checkAll: checkAll,
-                    checkAllHelp: checkAllHelp
+                    checkAllHelp: checkAllHelp,
+                    delTag: delTag
                 };
             })(dom);
             //方法调用
@@ -146,9 +162,55 @@
             })(dom);
             //生成模板
             Tr.temple();
+            //方法返回
+            switch (config) {
+                case "getItems":
+                    return method.getItems();
+                    break;
+            };
+            return {
+                Tr: Tr
+            }
         }
     })
+
 })($);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -267,7 +329,6 @@ var getItem = (function () {
         return checkedItem;
     }
     value = function () {
-        debugger
         var array = new Array();
         var item = $("#mutipleSelect .body ul li").find("input");
         $(item).each(function () {

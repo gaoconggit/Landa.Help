@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -13,23 +14,11 @@ namespace TangDR
 
         public void ProcessRequest(HttpContext context)
         {
-            //if (context.Request.RequestType.ToLower() == "post")
-            //{
 
-            //}
-            //context.Response.ContentType = "application/json";
-            //context.Response.Write("Hello World");
-            string savedFileName = "";
 
-            foreach (string file in context.Request.Files)
-            {
-                HttpPostedFile hpf = context.Request.Files[file] as HttpPostedFile;
-                if (hpf.ContentLength == 0)
-                    continue;
-                // savedfilename = context.server.mappath(path.getfilename(hpf.filename));
-                // hpf.saveas(savedfilename);
-            }
-            context.Response.Write(savedFileName);
+            StreamReader test = new StreamReader(HttpContext.Current.Server.MapPath("/test.json"));
+            context.Response.Write(test.ReadToEnd());
+            context.Response.ContentType = "application/json";
         }
 
         public bool IsReusable
