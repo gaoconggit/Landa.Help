@@ -19,18 +19,17 @@
             }
             //继承自Widget方法
             var method = Object.create(Widget);
-
             method.init(this);
             method.getItems = function (dom) {
-                var group;
-                var length = dom.find(".body li").find("input").length;
-                var length_checked = 0;
-                var array =  dom.find(".body ul li").find("input");
-                $(array).each(function () {
-                    if ($(this).prop("checked") == true) {
-                        length_checked++;
-                    }
-                })
+                var items = method.getLength(dom);
+                return {
+                    length: items.length,
+                    length_checked: items.length_checked,
+                    length_unhecked: items.length_unhecked,
+                    value: method.getSelectdValues(dom)
+                }
+            }
+            method.getSelectdValues = function (dom) {
                 var array = new Array();
                 var item = dom.find(".body ul li").find("input");
                 $(item).each(function () {
@@ -38,31 +37,47 @@
                         array.push($(this).prop("value"))
                     }
                 })
-                group = {
+                return array;
+            }
+            method.getLength = function (dom) {
+                var length = dom.find(".body li").find("input").length;
+                var length_checked = 0;
+                var array = dom.find(".body ul li").find("input");
+                $(array).each(function () {
+                    if ($(this).prop("checked") == true) {
+                        length_checked++;
+                    }
+                })
+                return {
                     length: length,
                     length_checked: length_checked,
-                    length_unhecked: length - length_checked,
-                    value: array
-                }
-                return group;
+                    length_unhecked : length - length_checked
+                };
             }
+            //属性配置
             if (typeof (config) == "object") {
                 for (var i in config) {
                     switch (i) {
-                        case "url":
+                        case "data":
                             var url = config[i];
                             break;
                     }
                 }
             }
+            //方法调用
             else if(typeof(config) =="string") {
                 switch (config) {
                     case "getItems":
                         return method.getItems(this);
                         break;
+                    case "getSelectdValues":
+                        return method.getSelectdValues(this);
+                        break;
+                    case "getLength":
+                        return method.getLength(this);
+                        break;
                 }
             }
-
             //继承method
             var listbox = Object.create(method);
             listbox.topclick = function () {
@@ -71,16 +86,19 @@
                 })
             }
             listbox.hoverBody = function () {
-                this.dom.hover(function () {
-                    $(this).find(".body ul li").hover(function () {
-                        $(this).css("background", "#ccc");
-                    }, function () {
-                        $(this).css("background", "none");
-                    })
-                }, function () {
-                    $(this).find(".body").hide();
-                })
-            }
+                this.dom.click(function (event) {
+                    event = event || window.event;
+                    event.stopPropagation();
+                        $(this).find(".body ul li").hover(function () {
+                            $(this).css("background", "#ccc");
+                        }, function () {
+                            $(this).css("background", "none");
+                        })
+                });
+                $(document).click(function (e) {
+                    $("#demo .body").hide();
+                });
+              }
             listbox.checkAll = function () {
                 var dom = this.dom;
                 dom.find("[name=checkAll]").change(function () {
@@ -136,16 +154,28 @@
 
 
             }
+            listbox.genaraeItems = function (data) {
+                var additems = "";
+                $(data).each(function () {
+                    additems += "<li><input name='" + this.name + "' value='" + this.value + "' type='checkbox'/>" + this.text + "</li>";
+                })
+                this.dom.find(".body ul").append(additems);
+                listbox.itemClick();
+            }
             listbox.bundData = function (url) {
                 var dom = this.dom;
-                $.getJSON(url, function (data) {
-                    var additems = "";
-                    $(data).each(function () {
-                        additems += "<li><input name='" + this.name + "' value='" + this.value + "' type='checkbox'/>" + this.text + "</li>";
+                if ( typeof (url) == "string" ) {
+                    $.getJSON(url, function (data) {
+                        //异步json数据生成控件项
+                        listbox.genaraeItems(data);
                     })
-                    $(dom).find(".body ul").append(additems);
-                    listbox.itemClick();
-                })
+                }
+                else if (typeof (url) == "object")
+                {
+                        //本地数据生成控件项
+                        listbox.genaraeItems(data);
+                }
+               
 
             }
             listbox.delTag = function (e, obj) {
