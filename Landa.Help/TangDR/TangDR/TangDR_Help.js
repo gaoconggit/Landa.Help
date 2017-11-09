@@ -10,7 +10,7 @@
  * */
 
 
-(function(){
+(function () {
     $.extend({
         getMax: function (obj) {
             /// <summary>
@@ -18,29 +18,27 @@
             /// </summary>
             /// <param name="obj" type="array">数组</param>
             /// <returns type="array">数组</returns>
-			var max = obj[0];
-			$(obj).each(function(i){
-				if( max < obj[i])
-				{
-					max = obj[i];
-				}		
-			})
-			return max;
-		},
-        getMin: function(obj) {
+            var max = obj[0];
+            $(obj).each(function (i) {
+                if (max < obj[i]) {
+                    max = obj[i];
+                }
+            })
+            return max;
+        },
+        getMin: function (obj) {
             /// <summary>
             /// 得到数组最小数
             /// </summary>
             /// <param name="obj" type="array">数组</param>
             /// <returns type="int">最小数</returns>
-			var min = obj[0];
-			$(obj).each(function(i){
-				if( min > obj[i])
-				{
-					min = obj[i];
-				}		
-			})
-			return min;
+            var min = obj[0];
+            $(obj).each(function (i) {
+                if (min > obj[i]) {
+                    min = obj[i];
+                }
+            })
+            return min;
         },
         arraySoft: function (obj, rule) {
             /// <summary>
@@ -57,14 +55,16 @@
                             temp = obj[i];
                             obj[i] = obj[j];
                             obj[j] = temp;
+
                         }
                     }
-                    else if(rule == "min") {
+                    else if (rule == "min") {
                         if (obj[i] < obj[j]) {
                             temp = obj[i];
                             obj[i] = obj[j];
                             obj[j] = temp;
                         }
+
                     }
                 })
             })
@@ -79,7 +79,27 @@
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]); return null;
+        },
+        sort: function (arr) {
+            /// <summary>
+            /// 升序排序 asc
+            /// </summary>
+            /// <param name="arr" type="Array">数组</param>
+            var length = arr.length,
+                i = 0,
+                j = 0,
+                temp = 0;
+            for (i = 0; i < length - 1; i++) {
+                for (j = 0; j < length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
         }
-	})
+    });
 }($))
 

@@ -8,6 +8,8 @@ nuget update -self --更新版本
 
 
 nuget setApiKey d4147550-b831-4aa3-a721-f73ed47a1f19 -- 设置密钥
+
+
 nuget  spec -force --生成特征文件，里面有描述
 
 
@@ -15,4 +17,4 @@ nuget  spec -force --生成特征文件，里面有描述
 --打包，发布
 nuget pack Landa.Help.csproj -- 打包项目文件
 
-nuget push  Landa.Help.1.0.0.3.nupkg -src https://www.nuget.org/ //发布
+nuget push  Landa.Help.1.0.0.5.nupkg -src https://www.nuget.org/ //发布
