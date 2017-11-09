@@ -202,14 +202,10 @@ namespace Toolkit
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static bool IsAllInt(this string str)
+        public static bool IsAllInt(this string str, bool isStrict = false)
         {
-            if (str != null)
-            {
-                Regex rex = new Regex(@"^\d+$");
-                if (str != "" && rex.IsMatch(str))
-                    return true;
-            }
+            if (str != null && str != "" && (isStrict ? new Regex(@"^(-?\d +)(\.\d +)?$").IsMatch(str) : new Regex(@"^\d+$").IsMatch(str)))
+                return true;
             return false;
         }
 
@@ -220,12 +216,8 @@ namespace Toolkit
         /// <returns></returns>
         public static bool IsAllIntAndLetter(this string str)
         {
-            if (str != null)
-            {
-                Regex rex = new Regex(@"^[0-9a-zA-Z]+$");
-                if (str != "" && rex.IsMatch(str))
-                    return true;
-            }
+            if (str != null && str != "" && new Regex(@"^[0-9a-zA-Z]+$").IsMatch(str))
+                return true;
             return false;
         }
 
@@ -236,12 +228,8 @@ namespace Toolkit
         /// <returns></returns>
         public static bool IsAllChinese(this string str)
         {
-            if (str != null)
-            {
-                Regex rex = new Regex(@"^[\u4e00-\u9fbb]+$");
-                if (str != "" && rex.IsMatch(str))
-                    return true;
-            }
+            if (str != null && str != "" && new Regex(@"^[\u4e00-\u9fbb]+$").IsMatch(str))
+                return true;
             return false;
         }
 
@@ -252,12 +240,8 @@ namespace Toolkit
         /// <returns></returns>
         public static bool IsEmailFormat(this string str)
         {
-            if (str != null)
-            {
-                Regex rex = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
-                if (str != "" && rex.IsMatch(str))
-                    return true;
-            }
+            if (str != null && str != "" && new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$").IsMatch(str))
+                return true;
             return false;
         }
 
@@ -286,14 +270,8 @@ namespace Toolkit
         /// <returns></returns>
         public static bool IsUrlFormat(this string str, bool isStrict = false)
         {
-            if (str != null)
-            {
-                if (!str.Contains("http://") && !isStrict)
-                    str = "http://" + str;
-                Regex rex = new Regex(@"^http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?$");
-                if (str != "" && rex.IsMatch(str))
-                    return true;
-            }
+            if (str != null && str != "" && (!str.Contains("http://") && !isStrict ? new Regex(@"^http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?$").IsMatch(str) : new Regex(@"^http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?$").IsMatch("http://" + str)))
+                return true;
             return false;
         }
         #endregion

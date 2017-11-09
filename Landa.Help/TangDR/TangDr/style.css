@@ -1,0 +1,40 @@
+﻿        .TangDRlistBox{
+            width:250px;
+            height:auto;
+        }
+        .TangDRlistBox .top {
+            min-width:248px;
+            min-height:30px;
+            border:1px solid #ccc;
+            display: inline-block;
+        }
+        .TangDRlistBox .top span{
+            background:#e1ecf5;
+            color:#39739d;
+            padding:4px;
+            font-size:11px;
+            display:block;
+            margin:0px 4px 4px 0px;
+            float:left;
+        }
+        .TangDRlistBox .body {
+            height:auto;
+            display:none;
+            border:1px solid #ccc;
+            border-top:none;
+            clear:both;
+            margin-top: -4px;
+        }
+
+        .TangDRlistBox .body ul{
+            margin:0;
+            list-style:none;
+            padding-left:0px;
+        }
+        .TangDRlistBox .body li{
+            padding:10px 0 10px 10px;
+        }
+
+        .delImage {
+            margin-top:0px
+        }
