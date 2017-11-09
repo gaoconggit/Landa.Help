@@ -107,6 +107,20 @@
             return this.each(function(){
                 this.reset();
             });
+        },
+        isArraySame: function (name) {
+            /// <summary>
+            /// 在数组中是否有相同name
+            /// </summary>
+            /// <param name="name" type="type">检测的name</param>
+            /// <returns type="">bool</returns>
+            for (var i in this)
+            {
+                if (this[i] == name) {
+                    return true;
+                }
+            }
+            return false;
         }
     })
 }($))

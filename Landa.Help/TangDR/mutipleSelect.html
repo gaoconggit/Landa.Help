@@ -7,7 +7,9 @@
     <link href="LandaUI/css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="demo2"></div>
     <div id="demo"></div>
+
 </body>
 </html>
 <script src="LandaUI/javascript/jquery-3.2.1.js"></script>
@@ -16,24 +18,28 @@
 
 <script>
     var data = [
-          {
-              "name": "a1",
-              "value": "1",
-              "text": "唐家酒馆7"
-          },
-          {
-              "name": "a2",
-              "value": "2",
-              "text": "唐家赌场6"
-          },
-          {
-              "name": "a3",
-              "value": "3",
-              "text": "唐家赌场5"
-          }
+           {
+               "name": "a1",
+               "value": "1",
+               "text": "唐家酒馆7"
+           },
+           {
+               "name": "a2",
+               "value": "2",
+               "text": "唐家赌场6"
+           },
+           {
+               "name": "a3",
+               "value": "3",
+               "text": "唐家赌场5"
+           }
     ]
-    $("#demo").ListBox({
-        data: data,
-
+    $("#demo2").ListBox({
+        data: "test.json"
     });
+    $("#demo").ListBox({
+        data: data
+    });
+
+
 </script>
