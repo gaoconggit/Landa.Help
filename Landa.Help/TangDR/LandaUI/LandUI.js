@@ -212,6 +212,7 @@
             }
             listbox.bundData = function (url) {
                 var dom = this.dom;
+                debugger
                 if (typeof (url) == "string") {
                     $.getJSON(url, function (data) {
                         listbox.insert();
@@ -223,6 +224,7 @@
                 else if (typeof (url) == "object") {
                     listbox.insert();
                     //本地数据生成控件项
+                    var data = url;
                     listbox.genaraeItems(data);
                 }
                 listbox.help();
