@@ -212,7 +212,6 @@
             }
             listbox.bundData = function (url) {
                 var dom = this.dom;
-                debugger
                 if (typeof (url) == "string") {
                     $.getJSON(url, function (data) {
                         listbox.insert();
