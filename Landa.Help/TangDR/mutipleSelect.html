@@ -4,17 +4,42 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <meta charset="utf-8" />
-    <link href="TangDr/style.css" rel="stylesheet" />
+    <link href="LandaUI/css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="demo2"></div>
     <div id="demo"></div>
+
 </body>
 </html>
-<script src="TangDr/jquery-3.2.1.js"></script>
-<script src="TangDR/TangDR_Help.js"></script>
-<script src="TangDr/LandUI.js"></script>
-
+<script src="LandaUI/javascript/jquery-3.2.1.js"></script>
+<script src="LandaUI/javascript/TangDR_Help.js"></script>
+<script src="LandaUI/LandUI.js"></script>
 
 <script>
-    $("#demo").ListBox({url: "test.json"});
+    var data = [
+           {
+               "name": "a1",
+               "value": "1",
+               "text": "唐家酒馆7"
+           },
+           {
+               "name": "a2",
+               "value": "2",
+               "text": "唐家赌场6"
+           },
+           {
+               "name": "a3",
+               "value": "3",
+               "text": "唐家赌场5"
+           }
+    ];
+    $("#demo2").ListBox({
+        data: "test.json"
+    });
+    $("#demo").ListBox({
+        data: data
+    });
+
+
 </script>
