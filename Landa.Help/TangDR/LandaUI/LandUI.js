@@ -15,7 +15,7 @@
                                         + "<ul>"
                                         + "</ul>"
                                         + "</div>");
-                    this.dom.addClass("TangDRlistBox");
+                    this.dom.addClass("LandaListbox");
                 },
             }
             //方法类
