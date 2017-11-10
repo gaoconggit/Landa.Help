@@ -1,0 +1,40 @@
+﻿        .LandaListbox{
+            width:250px;
+            height:auto;
+        }
+        .LandaListbox .top {
+            min-width:248px;
+            min-height:30px;
+            border:1px solid #ccc;
+            display: inline-block;
+        }
+        .LandaListbox .top span{
+            background:#e1ecf5;
+            color:#39739d;
+            padding:4px;
+            font-size:13px;
+            display:block;
+            margin:0px 4px 4px 0px;
+            float:left;
+        }
+        .LandaListbox .body {
+            height:auto;
+            display:none;
+            border:1px solid #ccc;
+            border-top:none;
+            clear:both;
+            margin-top: -4px;
+        }
+
+        .LandaListbox .body ul{
+            margin:0;
+            list-style:none;
+            padding-left:0px;
+        }
+        .LandaListbox .body li{
+            padding:10px 0 10px 10px;
+        }
+
+        .LandaListbox .delImage {
+            margin-top:0px
+        }
